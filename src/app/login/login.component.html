@@ -1,0 +1,16 @@
+<form class="formDiv">
+    <div class="formBorder">
+        <label for="name">name</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name"/>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password"/>
+
+        @if(this.errorMessage){
+            <span class="errorMessage">{{ errorMessage }}</span>
+        }
+
+        <button (click)="loginUser()">LogIn</button>
+        <p class="forgotPass" routerLink="/forgotPassword" >Forgot Password.</p>
+    </div>
+</form>
