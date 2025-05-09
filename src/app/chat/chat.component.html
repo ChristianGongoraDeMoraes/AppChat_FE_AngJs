@@ -1,0 +1,23 @@
+<div class = "divSuprema">
+    <div class = "friendList">
+        @for (friend of friends; track friend.id) {
+            <li (click)="getChat(friend.id)">{{friend.userName}}</li>
+        } @empty {
+            <li>Você não tem amigos ainda.</li>
+        }
+
+        <li class = "addF">Adicionar amigos</li>
+    </div>
+    <div class = "chat">
+        <div>
+            @for (message of messages; track message.id) {
+                <li>{{message.senderName}} : {{message.message}}</li>
+            } @empty {
+                <li>Sem mensagens para exibir.</li>
+            }
+        </div>
+        <div class = "input">
+            <input  id="message" [(ngModel)]="message" name="message"> <div class = "send" (click)="sendMessage()">Send</div>
+        </div>
+    <div>
+</div>

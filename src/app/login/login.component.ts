@@ -32,8 +32,7 @@ export class LoginComponent {
       next: (data: any) => {
         if(data){
           this.request.setToken(data.token);
-          this.name = data.token;
-          this.router.navigate(['']);
+          this.router.navigate(['chat']);
         }else{
           this.errorMessage = 'Invalid credentials';
         }
@@ -44,4 +43,6 @@ export class LoginComponent {
       }
     });
    }
+
+
 }

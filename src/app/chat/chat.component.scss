@@ -1,0 +1,90 @@
+.divSuprema{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .friendList{ 
+        font-weight: 700;
+        list-style-type: none;
+    
+        border: 1px solid black;
+        border-radius: 15px;
+        margin-right: 20px;
+
+        width: 300px;
+        height: 80%;
+        overflow: hidden;
+        text-align: center;
+    
+    
+        li{
+            border: 2px solid black;
+            border-radius: 30px;
+            margin: 10px;
+            padding: 10px;
+        }
+        li:hover{
+            cursor: pointer;
+            background-color: #000000;
+            color: white;
+        }
+
+        .addF{
+            background-color: green;
+            color: black;
+        }
+        .addF:hover{
+            cursor: pointer;
+            background-color: #296829;
+            color: white;
+        }
+    }
+    
+    .chat{
+        font-weight: 700;
+        list-style-type: none;
+        height: 80%;
+        width: 80%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        //border: 1px solid black;
+        li{
+            margin: 10px;
+        }
+        .input{
+            display: flex;
+            input{
+                height: 30px;
+                width: 50%;
+                border: 2px solid black;
+                border-radius: 15px;
+                font-weight: 700;
+                padding: 10px;
+
+                margin-right: 15px;
+            }
+            .send{
+                border: 2px solid black;
+                font-weight: 700;
+                padding: 10px;
+                width: 40px;
+                height: 30px;
+
+                background-color: rgb(255, 255, 255);
+                color: #000000;
+                border-radius: 0px 15px;
+            }
+            .send:hover{
+                background-color: black;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+}    
