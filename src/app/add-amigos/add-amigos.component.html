@@ -1,0 +1,13 @@
+<div class = superDiv>
+    <div class = "addAmigo">
+        <div class = "inputAmg">
+            <label for="idAmigo">Id do amigo</label>
+            <input  id="idAmigo" [(ngModel)]="idAmigo" name="idAmigo">
+            <div class = "btnAdd"(click) = "addFriend()">Add</div>
+        </div>
+        <p>Meu id de amigo : {{ myToken.nameid }}</p>
+        <button class = "btnBack"mat-icon-button (click)="voltar()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+    </div>
+</div>

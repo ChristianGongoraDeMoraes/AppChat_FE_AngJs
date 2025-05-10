@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { HttpService } from '../Services/http.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 type Friend = {
@@ -18,7 +18,7 @@ type Message = {
 
 @Component({
   selector: 'app-chat',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })
@@ -33,7 +33,7 @@ export class ChatComponent implements OnInit {
     this.populingArray();
   }
 
-  getChat(receiverId: string){
+  getChat(receiverId: string): any{
     this.request.getMessages(receiverId).subscribe({
       next: (data: any) => {
         this.messages = []
@@ -70,5 +70,12 @@ export class ChatComponent implements OnInit {
         console.error('Erro', error);
       }
     });
+  }
+
+  atualizaChat(){
+    if(this.currentFriendId)
+    {
+      this.getChat(this.currentFriendId);
+    }  
   }
 }

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
 import { Observable } from 'rxjs';
 
 type User = {
@@ -20,6 +21,11 @@ type UserCreate = {
   userName : String,
   email : String,
   password : String
+}
+type MyToken = {
+  nameid: string,
+  given_name: string,
+  email: string
 }
 
 @Injectable({
@@ -55,6 +61,11 @@ export class HttpService {
     setToken(token: string):void{
       localStorage.setItem('token', token);
     }
+    getTokenFromStorage(): MyToken{
+      let token: any = localStorage.getItem('token')
+      const decode: MyToken = jwtDecode<MyToken>(token);
+      return decode;
+    }
 
 
     getFriends(): Observable<any>{
@@ -80,6 +91,18 @@ export class HttpService {
       const body = {
         message: message,
         receiverId: receiverId
+      };
+
+      return this.http.post(urlX, body, { headers });
+    }
+
+    addFriend(userId: string, friendId: string){
+      let urlX : string = this.url + `/api/FriendShip`;
+      const headers = this.headers;
+      
+      const body = {
+       userId : userId,
+       friendId : friendId
       };
 
       return this.http.post(urlX, body, { headers });
