@@ -9,9 +9,19 @@
         <li class = "addF" routerLink="/addAmigos">Adicionar amigos</li>
     </div>
     <div class = "chat">
-        <div>
+        <div class = "divChat">
             @for (message of messages; track message.id) {
-                <li>{{message.senderName}} : {{message.message}}</li>
+                <li>
+                    <p>{{message.senderName}} : {{message.message}}</p> 
+                    <span class = "horaMessage"> 
+                        <p>
+                            {{formatarDia(message.sended)}}
+                        </p>
+                        <p>
+                            {{formatarDataCompleta(message.sended)}}
+                        </p> 
+                    </span>
+                </li>
             } @empty {
                 <li></li>
             }

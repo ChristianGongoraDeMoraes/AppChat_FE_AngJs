@@ -78,4 +78,22 @@ export class ChatComponent implements OnInit {
       this.getChat(this.currentFriendId);
     }  
   }
+
+  formatarDataCompleta(dataStr: string): string {
+    const corrigida = dataStr.replace(/(\.\d{3})\d+/, '$1');
+    const data = new Date(corrigida);
+    return data.toLocaleString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+
+  formatarDia(dataStr: string): string {
+    const corrigida = dataStr.replace(/(\.\d{3})\d+/, '$1');
+    const data = new Date(corrigida);
+    return data.toLocaleString('pt-BR', {
+      day: '2-digit',
+      month: '2-digit'
+    });
+  }
 }
