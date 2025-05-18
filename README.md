@@ -1,3 +1,8 @@
+
+att 17/05:
+chat + horas
+![attSiteChatComHora](https://github.com/user-attachments/assets/dd367d15-dde0-4415-8311-f7f048f8b90d)
+
 logado como gato:
 ![image](https://github.com/user-attachments/assets/b080b1f4-cc03-4ebb-9eff-18aa27511384)
 
