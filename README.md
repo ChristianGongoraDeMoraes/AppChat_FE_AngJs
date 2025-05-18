@@ -1,3 +1,30 @@
+logado como gato:
+![image](https://github.com/user-attachments/assets/b080b1f4-cc03-4ebb-9eff-18aa27511384)
+
+logado como chris: 
+![image](https://github.com/user-attachments/assets/16fb111f-16ee-43b3-abef-57174695f34e)
+
+logado como chris chat com 12345:
+![image](https://github.com/user-attachments/assets/f172f17f-9688-4200-8ff6-490349ea143f)
+
+page add amigo:
+![image](https://github.com/user-attachments/assets/8f16e201-a930-44dd-9c2c-2eac12a5d7da)
+
+login page:
+![image](https://github.com/user-attachments/assets/d1deb0e4-e5ad-4a8e-b7e0-741090716ced)
+
+login fail:
+![image](https://github.com/user-attachments/assets/12e5d1ea-b108-4078-baab-6e93b5f0dffd)
+
+register page:
+![image](https://github.com/user-attachments/assets/8ccb3220-6f9e-4199-8193-4cd6a0473b45)
+
+
+
+
+
+
+
 # App
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
