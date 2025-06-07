@@ -57,6 +57,12 @@
         .divChat{
             overflow-y: scroll;
             scrollbar-color: rgb(0, 0, 0) rgba(0, 0, 0, 0);
+            .sender{
+                color: red;
+            }
+            .messagebox{
+                display: flex;
+            }
         }
 
 

@@ -65,6 +65,7 @@ export class ChatComponent implements OnInit {
     this.request.sendMessage(this.currentFriendId, this.message).subscribe({
       next: (data: any) => {
         this.getChat(this.currentFriendId);
+        this.message = '';
       },
       error: (error: any) => {
         console.error('Erro', error);

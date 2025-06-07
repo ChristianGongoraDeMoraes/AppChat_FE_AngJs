@@ -12,7 +12,7 @@
         <div class = "divChat">
             @for (message of messages; track message.id) {
                 <li>
-                    <p>{{message.senderName}} : {{message.message}}</p> 
+                    <span class="messagebox"><p class="sender">{{message.senderName}} ::</p> <p>{{message.message}}</p></span>
                     <span class = "horaMessage"> 
                         <p>
                             {{formatarDia(message.sended)}}

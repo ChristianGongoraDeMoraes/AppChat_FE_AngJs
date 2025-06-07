@@ -108,4 +108,3 @@ export class HttpService {
       return this.http.post(urlX, body, { headers });
     }
 }
-
