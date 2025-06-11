@@ -9,4 +9,11 @@ html,body{
     outline: none;
 }
 html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+        background-image: url('/black_and_white_image.png');
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 200px;}
+
+html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

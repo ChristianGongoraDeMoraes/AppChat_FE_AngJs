@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import { HttpService } from '../Services/http.service';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 type Friend = {
   id : string,
@@ -18,7 +19,7 @@ type Message = {
 
 @Component({
   selector: 'app-chat',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, MatIconModule],
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })

@@ -13,7 +13,7 @@ type MyToken = {
 
 @Component({
   selector: 'app-add-amigos',
-  imports: [FormsModule, MatIconModule],
+  imports: [FormsModule, MatIconModule, MatIconModule],
   templateUrl: './add-amigos.component.html',
   styleUrl: './add-amigos.component.scss'
 })

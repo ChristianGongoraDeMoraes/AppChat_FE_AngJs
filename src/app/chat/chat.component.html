@@ -6,29 +6,38 @@
             <li>Você não tem amigos ainda.</li>
         }
 
-        <li class = "addF" routerLink="/addAmigos">Adicionar amigos</li>
+        <li class = "addF" routerLink="/addAmigos"> 
+            Adicionar Amigos
+            <mat-icon>
+                person_add
+            </mat-icon>
+        </li>
     </div>
     <div class = "chat">
         <div class = "divChat">
             @for (message of messages; track message.id) {
                 <li>
-                    <span class="messagebox"><p class="sender">{{message.senderName}} ::</p> <p>{{message.message}}</p></span>
+                    <span class="messagebox"><p class="sender">{{message.senderName}} :</p> <p>{{message.message}}</p></span>
                     <span class = "horaMessage"> 
                         <p>
-                            {{formatarDia(message.sended)}}
+                            [{{formatarDia(message.sended)}}]
                         </p>
                         <p>
-                            {{formatarDataCompleta(message.sended)}}
+                            [{{formatarDataCompleta(message.sended)}}]
                         </p> 
                     </span>
                 </li>
             } @empty {
-                <li></li>
+                <li>There's no messages</li>
             }
         </div>
         <div class = "input">
-            <input  id="message" [(ngModel)]="message" name="message"> <div class = "send" (click)="sendMessage()">Send</div>
-            <div class = "btnAtt"(click) = "atualizaChat()">X</div>
+            <input  id="message" [(ngModel)]="message" name="message" placeholder="Send a message"> <div class = "send" (click)="sendMessage()">Send</div>
+            <div class = "btnAtt"(click) = "atualizaChat()">
+                <mat-icon>
+                    autorenew
+                </mat-icon>
+            </div>
         </div>
     <div>
 </div>

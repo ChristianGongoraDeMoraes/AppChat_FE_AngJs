@@ -1,14 +1,14 @@
 <form class="formDiv">
     <div class="formBorder">
         <label for="name">Name</label>
-        <input type="text" id="name" [(ngModel)]="name" name="name"/>
+        <input type="text" id="name" [(ngModel)]="name" name="name" placeholder="name"/>
         
 
         <label for="email">Email</label>
-        <input type="text" id="email" [(ngModel)]="email" name="email"/>
+        <input type="text" id="email" [(ngModel)]="email" name="email" placeholder="email"/>
         
         <label for="password">Password</label>
-        <input type="password" id="password" [(ngModel)]="password" name="password"/>
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="password"/>
 
         @if(this.errorMessage){
             <span class="errorMessage">{{ errorMessage }}</span>
