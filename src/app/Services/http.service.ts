@@ -34,11 +34,12 @@ type MyToken = {
 export class HttpService {
     constructor(private http: HttpClient) {}
     url = `http://localhost:5150`
-
+    
+    /*
     private headers : any = new HttpHeaders({
       'Authorization': `Bearer ${localStorage.getItem('token')}`
     });
-
+    */
     getLoginUser(user: User): Observable<any>{
       let urlX : string = this.url + `/api/account/login`;
       let userF : UserF = {
@@ -70,13 +71,17 @@ export class HttpService {
 
     getFriends(): Observable<any>{
       let urlX : string = this.url + `/api/FriendShip`;
-      const headers = this.headers;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
       return this.http.get(urlX, { headers });
     }
 
     getMessages(receiverId: string): Observable<any>{
       let urlX : string = this.url + `/api/Chat`;
-      const headers = this.headers;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
 
       const params = new HttpParams()
       .set('ReceiverId', receiverId);
@@ -86,7 +91,9 @@ export class HttpService {
 
     sendMessage(receiverId : string, message : string){
       let urlX : string = this.url + `/api/Chat`;
-      const headers = this.headers;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
       
       const body = {
         message: message,
@@ -98,7 +105,9 @@ export class HttpService {
 
     addFriend(userId: string, friendId: string){
       let urlX : string = this.url + `/api/FriendShip`;
-      const headers = this.headers;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
       
       const body = {
        userId : userId,

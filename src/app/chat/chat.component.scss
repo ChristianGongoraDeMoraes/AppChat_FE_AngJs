@@ -68,18 +68,31 @@
         .divChat{
             overflow-y: scroll;
             scrollbar-color: rgb(0, 0, 0) rgba(0, 0, 0, 0);
-            .sender{
-                color: rgb(155, 90, 90);
-                text-wrap-mode: nowrap;
-                margin-right: 2px;
-                text-shadow: red 0.1px 0.1px 1px;
-            }
-            .sender::first-letter{
-                text-transform: capitalize;
-            }
-            .messagebox{
-                padding: 5px;
-                display: flex;
+            li{
+                position: relative;
+                //background-color: rgba(255, 5, 5, 0.048);
+                .sender{
+                    color: rgb(255, 0, 0);
+                    //filter: blur(1px);
+                    text-wrap-mode: nowrap;
+                    margin-right: 2px;
+                    
+                    //text-shadow: rgb(0, 0, 0) 0.3px 0.3px 1px, rgb(0, 0, 0) -0.3px -0.3px 1px;
+
+                    position: absolute;
+                    top: -7px;
+                    left: 5px;
+                }
+                .sender::first-letter{
+                    text-transform: capitalize;
+                }
+                .messagebox{
+                    
+                    padding: 10px;
+                    display: flex;
+
+                    padding-bottom: 0px;
+                }
             }
         }
 
@@ -88,13 +101,14 @@
         li{
             display: flex;
             justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.048);
+            border-bottom: 1px solid black;
             p{
                 white-space: normal;
                 overflow-wrap:anywhere;
             }
 
-            
-            border-radius: 10px;
+            //border-radius: 10px;
             
             .horaMessage{
                 display: flex;
@@ -112,11 +126,13 @@
                     text-align: center;
 
                     margin: 5px;
+                    
                 }
             }
         }
         li:hover{
-            background-color: #7c7c7c98;
+            background-color: #d1fdff25;
+            
         }
         .input{
             display: flex;
