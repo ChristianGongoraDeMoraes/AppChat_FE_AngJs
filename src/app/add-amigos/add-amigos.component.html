@@ -1,17 +1,42 @@
 <div class = superDiv>
-    <div class = "addAmigo">
-        <div class = "inputAmg">
-            <label for="idAmigo">Id do amigo</label>
-            <input  id="idAmigo" [(ngModel)]="idAmigo" name="idAmigo">
-            <div class = "btnAdd"(click) = "addFriend()">
-                <mat-icon>
-                    add
-                </mat-icon>
+    <div class="requestsflex">
+        <div class = "addAmigo">
+            <div class = "inputAmg">
+                <label for="idAmigo">Id do amigo</label>
+                <input  id="idAmigo" [(ngModel)]="idAmigo" name="idAmigo">
+                <div class = "btnAdd"(click) = "addFriend()">
+                    <mat-icon>
+                        add
+                    </mat-icon>
+                </div>
             </div>
+            <p>Meu id de amigo : {{ myToken.nameid }}</p>
+            <button class = "btnBack"mat-icon-button (click)="voltar()">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
         </div>
-        <p>Meu id de amigo : {{ myToken.nameid }}</p>
-        <button class = "btnBack"mat-icon-button (click)="voltar()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
+    
+    
+        <h1>
+            -- Requests for you --
+        </h1>
+        @for (request of requests; track request.id) {
+            <li class="requests">
+                <p>
+                    id : {{ request.id }}
+                </p>
+                <p>
+                    name : {{ request.userName }}
+                </p>
+                <button class="accept" (click)="acceptRequest(request.id)">
+                    <mat-icon>check</mat-icon>
+                </button>
+                <button class="decline" (click)="declineFriend(request.id)">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </li>
+        } @empty {
+            <li>There's no requests</li>
+        }
     </div>
 </div>

@@ -10,6 +10,11 @@ type MyToken = {
   given_name: string,
   email: string
 }
+type Request = {
+  id: string,
+  userName: string,
+  email: string
+}
 
 @Component({
   selector: 'app-add-amigos',
@@ -20,6 +25,8 @@ type MyToken = {
 export class AddAmigosComponent implements OnInit{
 
   constructor(private request : HttpService, private router : Router) {}
+  requests: Request[] = [];
+
   idAmigo = "";
   myToken : MyToken = {
       nameid : "",
@@ -28,7 +35,20 @@ export class AddAmigosComponent implements OnInit{
   };
   ngOnInit(): void {
     this.myToken = this.request.getTokenFromStorage();
+    this.getRequests();
     }
+
+  acceptRequest(friendId: any){
+    this.request.addFriend(this.myToken.nameid,friendId).subscribe({
+      next: (data: any) => {
+        
+        this.getRequests();
+      },
+      error: (error: any) => {
+        console.log('Erro', error);
+      }
+    });
+  }
 
   addFriend(): any{
       this.request.addFriend(this.myToken.nameid,this.idAmigo).subscribe({
@@ -37,6 +57,31 @@ export class AddAmigosComponent implements OnInit{
       },
       error: (error: any) => {
         console.log('Erro', error);
+      }
+    });
+  }
+
+  getRequests(): any{
+    this.requests = [];
+    this.request.getFriendsRequests().subscribe({
+      next: (data: any) => {
+        for(let r of data){
+          this.requests.push(r);
+        }
+      },
+      error: (error: any) => {
+        console.log('Erro');
+      }
+    });
+  }
+
+  declineFriend(friendId: any): any{
+    this.request.declineFriend(this.myToken.nameid,friendId).subscribe({
+      next: (data: any) => {
+        this.getRequests();
+      },
+      error: (error: any) => {
+        console.log('Erro');
       }
     });
   }

@@ -4,63 +4,129 @@
     display: flex;
     height: 100vh;
     width: 100vw;
-    font-weight: 700;
 
+    position: fixed;
+    overflow-y: auto;
+    
+
+    font-weight: 700;
+    flex-wrap: wrap;
+    gap: 0px;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    .addAmigo{
-        background-color: rgba(233, 233, 233, 0.89);
+    .requestsflex{
+        
+        .addAmigo{
+            min-height: 0;
+            background-color: rgba(233, 233, 233, 0.89);
+            max-width: 500px;
+            margin: 0 auto;
 
-        border: 2px solid black;
-        border-radius: 15px;
-        padding: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 15px;
-
-        .inputAmg{
-            width: 100%;
+            border: 2px solid black;
+            border-radius: 15px;
+            padding: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            
-            #idAmigo{
+            flex-direction: column;
+            gap: 15px;
+    
+            .inputAmg{
                 width: 100%;
-                padding: 10px;
-                border: 2px solid black;
-                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                
+                #idAmigo{
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid black;
+                    border-radius: 10px;
+                }
+                .btnAdd {
+                    border: 1px solid rgba(0, 0, 0, 0.26);
+    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    color: rgb(97, 97, 97);
+                    border-radius: 100px;
+    
+                    width: 30px;
+                    height: 30px;
+    
+                    background-color: rgb(0, 168, 0);
+                }
+                .btnAdd:hover{
+                    background-color: rgb(82, 151, 82);
+                    cursor: pointer;
+                }
             }
-            .btnAdd {
-                border: 1px solid rgba(0, 0, 0, 0.26);
-
+    
+    
+            .btnBack{
+                border-radius: 100px;
+            }
+            .btnBack:hover{
+                background-color: rgb(129, 129, 129);
+                cursor: pointer;
+            }
+        }
+    
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        //width: 100%;
+        min-height: 0;
+        //height: auto;
+        h1{
+            color: white;
+        }
+        .requests{
+            position: relative;
+            list-style-type: none;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            .accept{
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                background-color: green;
                 display: flex;
                 align-items: center;
                 justify-content: center;
 
-                color: rgb(97, 97, 97);
-                border-radius: 100px;
-
-                width: 30px;
-                height: 30px;
-
-                background-color: rgb(0, 168, 0);
+                position: absolute;
+                right: 120px;
+                bottom: 20px;
             }
-            .btnAdd:hover{
-                background-color: rgb(82, 151, 82);
+            .decline{
+                height: 40px;
+                width: 40px;
+                border-radius: 100%;
+                background-color: rgb(128, 0, 0);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                position: absolute;
+                right: 50px;
+                bottom: 20px;
+            }
+            .accept:hover{
                 cursor: pointer;
+                background-color: rgb(0, 37, 0);
             }
-        }
-
-
-        .btnBack{
-            border-radius: 100px;
-        }
-        .btnBack:hover{
-            background-color: rgb(129, 129, 129);
-            cursor: pointer;
+            .decline:hover{
+                cursor: pointer;
+                background-color: rgb(37, 0, 0);
+            }
         }
     }
 }

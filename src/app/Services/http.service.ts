@@ -103,6 +103,28 @@ export class HttpService {
       return this.http.post(urlX, body, { headers });
     }
 
+    declineFriend(userId: string, friendId: string){
+      let urlX : string = this.url + `/api/FriendShip`;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
+       const params = new HttpParams()
+      .set('FriendId', friendId)
+      .set('UserId', userId);
+
+      return this.http.delete(urlX, {headers, params});
+    }
+
+
+
+    getFriendsRequests(){
+      let urlX : string = this.url + `/requests`;
+      const headers = new HttpHeaders({
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      });
+      return this.http.get(urlX, {headers});
+    }
+
     addFriend(userId: string, friendId: string){
       let urlX : string = this.url + `/api/FriendShip`;
       const headers = new HttpHeaders({
