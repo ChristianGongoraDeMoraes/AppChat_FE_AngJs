@@ -1,3 +1,5 @@
+https://www.linkedin.com/posts/christian-gongora-de-moraes-35a162243_nome-projeto-chat-apirest-v2-activity-7338525865103740928-nkEo?utm_source=share&utm_medium=member_desktop&rcm=ACoAADxbcXYBuQg-jYdgR4uG71xwFG4otZsLZiU
+
 
 att 17/05:
 chat + horas
